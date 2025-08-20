@@ -59,24 +59,25 @@ Username: admin
 
 **Password:** `admin123`
 
-## 📂 Project Structure
-BizLedger++/
-├── app.py # Main Flask app (routes + logic)
-├── db.py # Database setup (SQLAlchemy)
-├── models.py # DB Models (User, Invoice)
-├── init_db.py # Creates tables + default admin user
-├── templates/ # HTML templates
-│ ├── base.html # Layout template
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── invoices.html
-│ └── analytics.html
-├── static/ # Static files
-│ ├── style.css
-│ └── script.js
-├── requirements.txt # Python dependencies
-├── Procfile # For deployment (Heroku/Gunicorn)
-└── README.md # Project documentation
+**📂 Project Structure**
+
+    BizLedger++/
+    ├── app.py                # Main Flask app (routes + logic)
+    ├── db.py                 # Database setup (SQLAlchemy)
+    ├── models.py             # DB Models (User, Invoice)
+    ├── init_db.py            # Creates tables + default admin user
+    ├── templates/            # HTML templates
+    │   ├── base.html         # Layout template
+    │   ├── login.html
+    │   ├── dashboard.html
+    │   ├── invoices.html
+    │   └── analytics.html
+    ├── static/               # Static files
+    │   ├── style.css
+    │   └── script.js
+    ├── requirements.txt      # Python dependencies
+    ├── Procfile              # For deployment (Heroku/Gunicorn)
+    └── README.md             # Project documentation
 
 
 ## 🖼️ Screenshots
