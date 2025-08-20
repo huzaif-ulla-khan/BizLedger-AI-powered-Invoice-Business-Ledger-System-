@@ -1,62 +1,66 @@
 # BizLedger - Invoice & Business Ledger System
 
-**BizLedger** is a modern, AI-powered business ledger system that allows small businesses and freelancers to manage invoices, clients, and payments efficiently. The system includes a secure login, invoice management, and integration with a FastAPI backend and Streamlit/Flask frontend.
+**BizLedger** is a modern, AI-powered business ledger system that helps small businesses and freelancers efficiently manage invoices, clients, and payments. The system includes secure login, invoice management, and a FastAPI backend with a Streamlit/Flask frontend.
 
 ---
 
 ## 🛠️ Features
 
-- **User Authentication**
-  - Secure login system with hashed passwords
-  - Role-based access (Admin / User)
+### User Authentication
+- Secure login system with hashed passwords
+- Role-based access (Admin / User)
 
-- **Invoice Management**
-  - Add, edit, and delete invoices
-  - Track paid/unpaid status
-  - View invoice history
+### Invoice Management
+- Add, edit, and delete invoices
+- Track paid/unpaid status
+- View invoice history
 
-- **Client Management**
-  - Add and manage client information
-  - Link invoices to specific clients
+### Client Management
+- Add and manage client information
+- Link invoices to specific clients
 
-- **Tech Stack**
-  - **Backend:** FastAPI, SQLAlchemy, SQLite
-  - **Frontend:** Streamlit (or Flask)
-  - **Authentication:** Passlib (bcrypt)
-  - **Deployment-ready:** Can be deployed on Render / Railway / Heroku
+### Tech Stack
+- **Backend:** FastAPI, SQLAlchemy, SQLite
+- **Frontend:** Streamlit (or Flask)
+- **Authentication:** Passlib (bcrypt)
+- **Deployment-ready:** Render / Railway / Heroku
 
-- **Additional Features**
-  - Responsive UI
-  - Easy-to-read dashboard
-  - Secure password storage
-  - Future-ready for AI-powered analytics
+### Additional Features
+- Responsive UI
+- Easy-to-read dashboard
+- Secure password storage
+- Future-ready for AI-powered analytics
 
 ---
 
 ## 💻 Getting Started
 
-### 1. Clone the repository
-git clone https://github.com/yourusername/BizLedger.git
+### 1. Clone the Repository
+git clone https://github.com/huzaif-ulla-khan/BizLedger.git
 cd BizLedger
-2. Create virtual environment & activate
+2. Create Virtual Environment & Activate
 python -m venv ledger
-source ledger/Scripts/activate  # Windows
-# OR
-source ledger/bin/activate      # Mac/Linux
-3. Install dependencies
+# Windows
+ledger\Scripts\activate
+# Mac/Linux
+source ledger/bin/activate
+3. Install Dependencies
 pip install -r requirements.txt
-4. Initialize the database
+4. Initialize the Database
 python init_db.py
-Creates db.sqlite3 with default tables and an admin user (admin/admin123).
-5. Run the backend
+This will create db.sqlite3 with default tables and an admin user (admin/admin123).
+
+5. Run the Backend
 uvicorn app:app --reload
-6. Run the frontend (Streamlit)
+6. Run the Frontend (Streamlit)
 streamlit run streamlit_app.py
-🔑 Default Login
+🔑 Default Login Credentials
 Username: admin
+
 Password: admin123
 
 📂 Project Structure
+
 BizLedger/
 ├── app.py               # FastAPI backend
 ├── db.py                # Database connection
@@ -65,31 +69,43 @@ BizLedger/
 ├── requirements.txt     # Python dependencies
 ├── style.css            # Optional styling
 └── README.md            # Project documentation
+## 🖼️ Screenshots
+
+### 1. Dashboard
+![Dashboard Screenshot](https://github.com/huzaif-ulla-khan/BizLedger-AI-powered-Invoice-Business-Ledger-System-/blob/main/screenshots/dashboard.png)
+*Description: Overview of invoices and clients.*
+
+### 2. Add Invoice
+![Add Invoice Screenshot](https://github.com/huzaif-ulla-khan/BizLedger-AI-powered-Invoice-Business-Ledger-System-/blob/main/screenshots/add_invoice.png) 
+*Description: Form to create a new invoice.*
+
+
+
 🚀 Deployment
-Can be deployed easily on Render or Railway using the free tier.
+BizLedger can be easily deployed on Render or Railway:
 
-Steps:
+Push your repository to GitHub.
 
-Push your repo to GitHub.
-
-Connect GitHub repo to Render/Railway.
+Connect the GitHub repo to Render or Railway.
 
 Set environment variables if needed.
 
-Deploy backend and frontend.
+Deploy the backend and frontend.
+
+Live URL: [https://bizledger-invoice-and-business-ledger.onrender.com](https://bizledger-invoice-and-business-ledger.onrender.com)
 
 ⚡ Future Improvements
 AI-powered invoice predictions & analytics
 
 PDF export for invoices
 
+## 📞 Contact
+**Huzaif Ulla Khan**  
+- Email: [khuzaif319@gmail.com](mailto:khuzaif319@gmail.com)  
+- GitHub: [https://github.com/huzaif-ulla-khan](https://github.com/huzaif-ulla-khan)  
+- LinkedIn: [https://www.linkedin.com/in/your-linkedin](https://www.linkedin.com/in/your-linkedin)
+
+
 Multi-user role management
 
 Email notifications for invoices
-
-📞 Contact
-Huzaif Ulla Khan
-
-Email: [khuzaif319@gmail.com]
-
-GitHub: https://github.com/huzaif-ulla-khan
