@@ -58,7 +58,7 @@ streamlit run streamlit_app.py
 Username: admin
 
 Password: admin123
-
+---
 ## 📂 Project Structure
 BizLedger++/
 ├── app.py              # Main Flask app (routes + logic)
