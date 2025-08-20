@@ -59,7 +59,7 @@ Username: admin
 
 Password: admin123
 
-📂 Project Structure
+##📂 Project Structure
 
 BizLedger/
 ├── app.py               # FastAPI backend
