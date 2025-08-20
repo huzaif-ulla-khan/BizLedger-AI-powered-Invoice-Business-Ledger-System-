@@ -59,16 +59,27 @@ Username: admin
 
 Password: admin123
 
-##📂 Project Structure
+## 📂 Project Structure
 
-BizLedger/
-├── app.py               # FastAPI backend
-├── db.py                # Database connection
-├── init_db.py           # Script to initialize DB
-├── streamlit_app.py     # Frontend (Streamlit)
-├── requirements.txt     # Python dependencies
-├── style.css            # Optional styling
-└── README.md            # Project documentation
+BizLedger++/
+├── app.py              # Main Flask app (routes + logic)
+├── db.py               # Database setup (SQLAlchemy)
+├── models.py           # DB Models (User, Invoice)
+├── init_db.py          # Creates tables + default admin user
+├── templates/          # HTML templates
+│   ├── base.html       # Layout template
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── invoices.html
+│   └── analytics.html
+├── static/             # Static files
+│   ├── style.css
+│   └── script.js
+├── requirements.txt    # Python dependencies
+├── Procfile            # For deployment (Heroku/Gunicorn)
+└── README.md           # Project documentation
+
+
 ## 🖼️ Screenshots
 
 ### 1. Dashboard
