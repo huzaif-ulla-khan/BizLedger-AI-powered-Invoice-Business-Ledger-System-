@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <div class="card p-3 mb-3">
+      <h6>Total Income</h6>
+      <h3 class="text-success">₹ {{ total_income }}</h3>
+    </div>
+    <div class="card p-3 mb-3">
+      <h6>Total Expense</h6>
+      <h3 class="text-danger">₹ {{ total_expense }}</h3>
+    </div>
+    <div class="card p-3 mb-3">
+      <h6>Net Balance</h6>
+      <h3>₹ {{ balance }}</h3>
+    </div>
+    <a class="btn btn-outline-primary w-100" href="{{ url_for('ledger') }}">Open Ledger</a>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card p-3 mb-3">
+      <h5>Category Breakdown</h5>
+      <canvas id="catChart" height="180"></canvas>
+    </div>
+
+    <div class="card p-3 mb-3">
+      <h5>Monthly Net (Last 6 months)</h5>
+      <canvas id="seriesChart" height="180"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+  // render charts using cat_data and series passed from server by templating
+  const catData = {{ cat_data|tojson }};
+  const months = {{ months|tojson }};
+  const series = {{ series|tojson }};
+</script>
+{% endblock %}

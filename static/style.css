@@ -1,0 +1,5 @@
+/* static/style.css */
+body { background: #f7f9fc; }
+.card { border-radius: 8px; }
+.table thead th { border-bottom: none; }
+.navbar-brand { font-weight: 700; }

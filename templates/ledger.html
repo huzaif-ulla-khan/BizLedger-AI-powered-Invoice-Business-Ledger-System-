@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card p-3 mb-3">
+      <h5>Ledger</h5>
+
+      <form class="row g-2 mb-3" method="get" action="{{ url_for('ledger') }}">
+        <div class="col-md-3"><select name="type" class="form-select"><option value="">All types</option><option value="income" {% if filters.type=='income' %}selected{% endif %}>Income</option><option value="expense" {% if filters.type=='expense' %}selected{% endif %}>Expense</option></select></div>
+        <div class="col-md-3"><select name="category" class="form-select"><option value="">All categories</option>{% for c in categories %}<option value="{{ c }}" {% if filters.category==c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+        <div class="col-md-2"><input type="date" name="start" value="{{ filters.start }}" class="form-control"></div>
+        <div class="col-md-2"><input type="date" name="end" value="{{ filters.end }}" class="form-control"></div>
+        <div class="col-md-2"><button class="btn btn-secondary w-100">Filter</button></div>
+      </form>
+
+      <table class="table table-striped">
+        <thead class="table-light">
+          <tr><th>Date</th><th>Description</th><th>Category</th><th>Type</th><th class="text-end">Amount</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          {% for t in transactions %}
+          <tr>
+            <td>{{ t.date }}</td>
+            <td>{{ t.description }}</td>
+            <td>{{ t.category or '' }}</td>
+            <td>{{ t.type }}</td>
+            <td class="text-end">₹ {{ '%.2f'|format(t.amount) }}</td>
+            <td>
+              <form method="post" action="{{ url_for('ledger_delete', tid=t.id) }}" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete transaction?')">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <a class="btn btn-outline-success" href="{{ url_for('ledger_export', fmt='csv') }}">Download CSV</a>
+      <a class="btn btn-outline-success ms-2" href="{{ url_for('ledger_export', fmt='xlsx') }}">Download Excel</a>
+
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-3 mb-3">
+      <h5>Add Transaction</h5>
+      <form method="post" action="{{ url_for('ledger') }}">
+        <div class="mb-2"><input class="form-control" name="date" type="date" value="{{ ('' ) }}"></div>
+        <div class="mb-2"><input class="form-control" name="description" placeholder="Description" required></div>
+        <div class="mb-2"><input class="form-control" name="amount" placeholder="Amount" required></div>
+        <div class="mb-2">
+          <select name="type" class="form-select">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+        </div>
+        <div class="mb-2"><input class="form-control" name="category" placeholder="Category (optional)"></div>
+        <div class="d-grid"><button class="btn btn-primary">Add</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
