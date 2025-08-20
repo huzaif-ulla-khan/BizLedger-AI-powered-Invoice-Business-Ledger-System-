@@ -60,7 +60,6 @@ Username: admin
 Password: admin123
 
 ## 📂 Project Structure
-
 BizLedger++/
 ├── app.py              # Main Flask app (routes + logic)
 ├── db.py               # Database setup (SQLAlchemy)
